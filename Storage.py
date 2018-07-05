@@ -5,8 +5,8 @@ def create_table(table_name):
     db = sqlite3.connect('database.db')
     csr = db.cursor()
     
-    csr.execute("CREATE TABLE IF NOT EXISTS " + table_name + ''' \
-                                    (ID INTEGER PRIMARY KEY, 
+    csr.execute("CREATE TABLE IF NOT EXISTS " + table_name + ''' 
+                                    (Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                      Date TEXT, 
                                      Description TEXT, 
                                      Dr REAL, 
@@ -26,13 +26,13 @@ def drop_table(table_name):
     db.close()
     
     
-def add_transaction(table_name, id, date, des, dr, cr):
+def add_transaction(table_name, date, des, dr, cr):
     db = sqlite3.connect('database.db')
     csr = db.cursor()
     
-    csr.execute("INSERT INTO " + table_name + \
-                    '''(ID, Date, Description, Dr, Cr)
-                        VALUES(?,?,?,?,?)''', (id, date, des, dr, cr))
+    csr.execute("INSERT INTO " + table_name + '''
+                    (Date, Description, Dr, Cr)
+                        VALUES(?,?,?,?) ''', (date, des, dr, cr))
     
     print('new transaction inserted')
  
@@ -43,7 +43,8 @@ def add_transaction(table_name, id, date, des, dr, cr):
 def display_table(pd, table_name):
     db = sqlite3.connect('database.db')
     
-    table  = pd.read_sql_query("SELECT * from " + table_name, db)
+    table = pd.read_sql_query("SELECT * from " + table_name +
+                              " ORDER BY Date ASC", db)
     
     db.commit()
     db.close()

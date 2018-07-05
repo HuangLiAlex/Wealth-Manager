@@ -6,12 +6,13 @@ Created on Thu Jan 18 21:04:45 2018
 """
 import pandas as pd
 import Storage as db
+from util import common
+
 
 """ define constants """
 col_to_del = ['Value date']
 HEADER_ROWS = 5
 list_del_idx = []
-
 
 """ define variables """
 file = 'csv\TransactionHistory_2.csv'
@@ -25,7 +26,7 @@ df = df.fillna('')
 
 """ combine description """
 for index, row in df.iterrows():
-    if row['Transaction date']  is '':
+    if row['Transaction date'] is '':
         df.iloc[index-1]['Description'] += ' ' + row['Description']
         list_del_idx.append(index)
         
@@ -33,20 +34,28 @@ df.drop(labels=list_del_idx, axis=0, inplace=True)
 
 df.columns = ["Date", "Description", "Dr", "Cr"]
 df.index.name = "id"
+
 """ output to excel file """
-#print(df)
-#df.to_csv('csv\output.csv')
+# print(df)
+# df.to_csv('csv\output_ocbc.csv')
 
 """ save into database """
-db.drop_table("Journal")
-db.create_table("Journal")
-db.add_transaction("Journal",               \
-                   0,                       \
-                   df.loc[0,'Date'],        \
-                   df.loc[0,'Description'], \
-                   df.loc[0,'Dr'],          \
-                   df.loc[0,'Cr'])
+table_name = "Journal"
 
-#db.add_transaction("Journal", "20180401", "dummy_txn", 10, None)
-table = db.display_table(pd, "Journal")
-print (table)
+db.drop_table(table_name)
+db.create_table(table_name)
+
+for index in reversed(df.index):
+    date = df.loc[index, 'Date']
+    description = df.loc[index, 'Description']
+    debit = df.loc[index, 'Dr']
+    credit = df.loc[index, 'Cr']
+
+    date = common.datetime_transform("OCBC", date)
+
+    db.add_transaction(table_name, date, description, debit, credit)
+
+table = db.display_table(pd, table_name)
+print(table)
+
+
