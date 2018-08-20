@@ -34,7 +34,7 @@ def add_transaction(table_name, date, des, dr, cr):
                     (Date, Description, Dr, Cr)
                         VALUES(?,?,?,?) ''', (date, des, dr, cr))
 
-    print('new transaction inserted')
+    # print('new transaction inserted')
 
     db.commit()
     db.close()

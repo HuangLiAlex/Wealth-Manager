@@ -53,5 +53,9 @@ def read_posb(filename):
     df.drop(col_to_del, axis=1, inplace=True)
     df = df.fillna('')
 
+    """ rename columns """
+    df.columns = ["Date", "Dr", "Cr", "Description"]
+    df.index.name = "id"
+
     return df
 

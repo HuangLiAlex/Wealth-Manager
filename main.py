@@ -4,12 +4,12 @@ from util import common
 import pandas as pd
 
 # get a file name as input
-files = ["csv\OCBC_APR.csv", "csv\POSB_APR.csv"]
+files = ["POSB_Nov2017.csv", "OCBC_Jan.csv"]
 
 # call reader to read the file and save into database
 for filename in files:
     df = None
-
+    filename = "csv\\" + filename
     if "OCBC" in filename:
         df = CSV_Reader.read_ocbc(filename)
 
@@ -18,7 +18,7 @@ for filename in files:
 
     table_name = "Journal"
 
-    # db.drop_table(table_name)
+    db.drop_table(table_name)
     db.create_table(table_name)
 
     for index in reversed(df.index):
@@ -27,9 +27,10 @@ for filename in files:
         debit = df.loc[index, 'Dr']
         credit = df.loc[index, 'Cr']
 
-        date = common.datetime_transform("OCBC", date)
+        # date = common.datetime_transform("OCBC", date)
 
         db.add_transaction(table_name, date, description, debit, credit)
 
     table = db.display_table(pd, table_name)
-    print(table)
+
+    table.to_csv('csv\output_posb.csv')
