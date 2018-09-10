@@ -1,20 +1,25 @@
-from reader import CSV_Reader
+from reader.ReaderFactory import ReaderFactory
 from util import Storage as db
-from util import common
 import pandas as pd
+import sys
 
 # get a file name as input
-files = ["POSB_Nov2017.csv", "OCBC_Jan.csv"]
+files = sys.argv[1:]
 
 # call reader to read the file and save into database
 for filename in files:
     df = None
-    filename = "csv\\" + filename
-    if "OCBC" in filename:
-        df = CSV_Reader.read_ocbc(filename)
+    filename = "csv/" + filename
 
-    if "POSB" in filename:
-        df = CSV_Reader.read_posb(filename)
+    oReaderFactory = ReaderFactory()
+
+    if "OCBC" in filename:
+        oReader = oReaderFactory.get_reader("OCBC")
+        df = oReader.read(filename)
+
+    elif "POSB" in filename:
+        oReader = oReaderFactory.get_reader("POSB")
+        df = oReader.read(filename)
 
     table_name = "Journal"
 
@@ -33,4 +38,4 @@ for filename in files:
 
     table = db.display_table(pd, table_name)
 
-    table.to_csv('csv\output_posb.csv')
+    table.to_csv('output\out.csv')
