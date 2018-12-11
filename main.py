@@ -1,41 +1,17 @@
-from reader.ReaderFactory import ReaderFactory
-from util import Storage as db
-import pandas as pd
-import sys
+from data.bankstatement import BankStatement
+from writer.writecsv import WriteCsv
 
-# get a file name as input
-files = sys.argv[1:]
+if __name__ == '__main__':
+    writer = WriteCsv()
 
-# call reader to read the file and save into database
-for filename in files:
-    df = None
-    filename = "csv/" + filename
+    bs = BankStatement("OCBC", "csv\TransactionHistory_2.csv")
 
-    oReaderFactory = ReaderFactory()
+    df = bs.getBankStatement()
 
-    if "OCBC" in filename:
-        oReader = oReaderFactory.get_reader("OCBC")
-        df = oReader.read(filename)
+    writer.write(df, "csv\output_ocbc.csv")
 
-    elif "POSB" in filename:
-        oReader = oReaderFactory.get_reader("POSB")
-        df = oReader.read(filename)
+    bs = BankStatement("POSB", "csv\posb_2.csv")
 
-    table_name = "Journal"
+    df = bs.getBankStatement()
 
-    db.drop_table(table_name)
-    db.create_table(table_name)
-
-    for index in reversed(df.index):
-        date = df.loc[index, 'Date']
-        description = df.loc[index, 'Description']
-        debit = df.loc[index, 'Dr']
-        credit = df.loc[index, 'Cr']
-
-        # date = common.datetime_transform("OCBC", date)
-
-        db.add_transaction(table_name, date, description, debit, credit)
-
-    table = db.display_table(pd, table_name)
-
-    table.to_csv('output\out.csv')
+    writer.write(df, "csv\output_posb.csv")
