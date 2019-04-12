@@ -34,7 +34,10 @@ class ReadCsvOcbc:
         df.index.name = "id"
 
         df["Date"] = pd.to_datetime(df["Date"], format="%d/%m/%Y")
-        df["Date"] = df["Date"].dt.strftime("%d/%m/%Y")
+        # df["Date"] = df["Date"].dt.strftime("%d/%m/%Y")
+
+        df["Source"] = "OCBC"
+        df["Category"] = "Uncategorised"
 
         return df
 

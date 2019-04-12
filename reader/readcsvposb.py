@@ -10,12 +10,14 @@ import pandas as pd
 class ReadCsvPosb:
 
     col_to_del = ['Reference', 'Transaction Ref1', 'Transaction Ref2', 'Transaction Ref3']
-    HEADER_ROWS = 16
-
-    # file = r'csv\posb_2.csv'
+    HEADER_ROWS = 6
 
     def read(self, sCsvFilePath):
-        df = pd.read_csv(sCsvFilePath, index_col=False, skiprows=self.HEADER_ROWS, skip_blank_lines=True)
+        df = pd.read_csv(sCsvFilePath,
+                         index_col=False,
+                         skiprows=self.HEADER_ROWS,
+                         skip_blank_lines=True,
+                         usecols=range(0, 7))
 
         """ remove redundant information """
         df['Transaction Ref'] = df['Transaction Ref1'].map(str) + ' ' + df['Transaction Ref2'].map(str)
@@ -25,11 +27,16 @@ class ReadCsvPosb:
         df.columns = ["Date", "Dr", "Cr", "Description"]
         df.index.name = "id"
 
-        columnsTitles=["Date", "Description", "Dr", "Cr"]
-        df = df.reindex(columns=columnsTitles)
+        column_titles = ["Date", "Description", "Dr", "Cr"]
+        df = df.reindex(columns=column_titles)
 
-        df["Date"] = pd.to_datetime(df["Date"], format="%d %b %Y")
-        df["Date"] = df["Date"].dt.strftime("%d/%m/%Y")
+        df.columns = ["Date", "Description", "Dr", "Cr"]
+
+        df["Date"] = pd.to_datetime(df["Date"], format="%d-%b-%y")
+        # df["Date"] = df["Date"].dt.strftime("%d/%m/%Y")
+
+        df["Source"] = "POSB"
+        df["Category"] = "Uncategorised"
 
         return df
 
