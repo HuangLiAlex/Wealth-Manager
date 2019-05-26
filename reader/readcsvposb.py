@@ -8,34 +8,49 @@ import pandas as pd
 
 
 class ReadCsvPosb:
-
     col_to_del = ['Reference', 'Transaction Ref1', 'Transaction Ref2', 'Transaction Ref3']
-    HEADER_ROWS = 6
+    HEADER_ROWS = 1
 
-    def read(self, sCsvFilePath):
-        df = pd.read_csv(sCsvFilePath,
+    def read(self, csv_file_path):
+        # col name must follow title sequence in csv file
+        col_names = ["Transaction Date", "Reference", "Debit Amount", "Credit Amount", "Transaction Ref1",
+                     'Transaction Ref2', 'Transaction Ref3']
+
+        df = pd.read_csv(csv_file_path,
                          index_col=False,
                          skiprows=self.HEADER_ROWS,
-                         skip_blank_lines=True,
-                         usecols=range(0, 7))
+                         names=col_names)
 
-        """ remove redundant information """
-        df['Transaction Ref'] = df['Transaction Ref1'].map(str) + ' ' + df['Transaction Ref2'].map(str)
-        df.drop(self.col_to_del, axis=1, inplace=True)
+        # remove blank lines
+        df.dropna(how='all', inplace=True)
         df = df.fillna('')
 
-        df.columns = ["Date", "Dr", "Cr", "Description"]
-        df.index.name = "id"
+        # Combine col
+        df['Transaction Ref'] = df['Reference'].map(str) + ' ' + \
+                                df['Transaction Ref1'].map(str) + ' ' + \
+                                df['Transaction Ref2'].map(str)
 
+        # Remove col
+        df.drop(self.col_to_del, axis=1, inplace=True)
+        # df = df.fillna('')
+
+        # Rename col: follow original sequence
+        # ['Transaction Date', 'Debit Amount', 'Credit Amount', 'Transaction Ref']
+        df.columns = ["Date", "Dr", "Cr", "Description"]
+        # df.index.name = "id"
+
+        # Re-index col
         column_titles = ["Date", "Description", "Dr", "Cr"]
         df = df.reindex(columns=column_titles)
 
-        df.columns = ["Date", "Description", "Dr", "Cr"]
-
+        # Change date format
         df["Date"] = pd.to_datetime(df["Date"], format="%d-%b-%y")
-        # df["Date"] = df["Date"].dt.strftime("%d/%m/%Y")
 
-        df["Source"] = "POSB"
+        # Sort order by Date
+        df = df.sort_values(by="Date")
+        df = df.reset_index(drop=True)
+
+        # Add Category col
         df["Category"] = "Uncategorised"
 
         return df
