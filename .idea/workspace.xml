@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e67def4b-d8c9-4209-b20c-befc8716aaf8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/main_categorise.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_read.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reader/readParsedCsv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader/readcsvposb.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader/readcsvposb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_categorise.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_categorise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_read.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_read.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,50 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="readcsvocbc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reader/readcsvocbc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readcsvposb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reader/readcsvposb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_categorise.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_categorise.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_categorise.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readParsedCsv.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reader/readParsedCsv.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_read.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main_read.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -69,13 +27,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bankStatement.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/container/bankStatement.py">
+      <file leaf-file-name="writecsv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/writer/writecsv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="60">
+              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_read.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_read.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,8 +82,8 @@
         <option value="$PROJECT_DIR$/reader/readParsedCsv.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/reader/readcsvposb.py" />
-        <option value="$PROJECT_DIR$/main_categorise.py" />
         <option value="$PROJECT_DIR$/main_read.py" />
+        <option value="$PROJECT_DIR$/main_categorise.py" />
       </list>
     </option>
   </component>
@@ -142,6 +109,11 @@
               <item name="Wealth-Manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="Wealth-Manager" type="462c0819:PsiDirectoryNode" />
               <item name="container" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wealth-Manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wealth-Manager" type="462c0819:PsiDirectoryNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Wealth-Manager" type="b2602c69:ProjectViewProjectNode" />
@@ -197,7 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main_categorise">
     <configuration name="ReadCSVOCBC" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Wealth Manager" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -234,24 +206,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="get-pip" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Wealth Manager" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/get-pip.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Wealth Manager" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,6 +219,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="D:\git\Wealth-Manager\main_read.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main_categorise" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Wealth Manager" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_categorise.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -289,19 +261,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.get-pip" />
       <item itemvalue="Python.ReadCSVOCBC" />
       <item itemvalue="Python.ReadCSVPOSB" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.writecsv" />
+      <item itemvalue="Python.main_categorise" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_categorise" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.writecsv" />
         <item itemvalue="Python.ReadCSVPOSB" />
         <item itemvalue="Python.ReadCSVOCBC" />
-        <item itemvalue="Python.get-pip" />
       </list>
     </recent_temporary>
   </component>
@@ -320,14 +292,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-119" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12065332" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32897604" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3845316" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3845316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -446,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writer/writecsv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/container/transaction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -481,9 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -550,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reader/readParsedCsv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reader/readcsvposb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -566,7 +520,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/container/bankStatement.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="285">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -574,20 +528,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_categorise.py">
+    <entry file="file://$PROJECT_DIR$/reader/readParsedCsv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_read.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="240">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writer/writecsv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_categorise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

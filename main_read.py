@@ -3,9 +3,7 @@ from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
 from container.bankStatement import BankStatement
-from reader.readParsedCsv import ReadParsedCsv
 from writer.writecsv import WriteCsv
-from util.common import combine
 
 if __name__ == '__main__':
 
@@ -50,17 +48,5 @@ if __name__ == '__main__':
     print("Parsed file is saved into ", output_dir, output_name)
     writer.write(df, output_dir + output_name)
 
-    # df_parsed = ReadParsedCsv.read("csv\output_posb.csv")
-    # writer.write(df_parsed, "csv\output_parsed.csv")
-
-    # df_combined = combine(df_ocbc, df_posb)
-    # writer.write(df_combined, "csv\output_combined.csv")
-
-    ######
-    # manipulating transactions
-    # manually add transaction categories
-
-    # read manipulated csv file
-    # save into monthly statement for summarising
 
 
