@@ -45,7 +45,7 @@ if __name__ == '__main__':
         os.mkdir(output_dir)
         print("Directory ", output_dir, " Created ")
 
-    print("Parsed file is saved into ", output_dir, output_name)
+    print("Parsed file is saved into ", output_dir + output_name)
     writer.write(df, output_dir + output_name)
 
 
