@@ -5,6 +5,7 @@ from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
 from reader.readParsedCsv import ReadParsedCsv
+from writer.report import Report
 from writer.writecsv import WriteCsv
 
 '''
@@ -44,30 +45,12 @@ if __name__ == '__main__':
     df = ReadParsedCsv.read(file_path)
     print("Data frame loading completed")
 
-    category_list = []
-
-    for category in df["Category"]:
-        if category not in category_list:
-            category_list.append(category)
-
     output_filename = file_path[:-4] + "_sorted2.csv"
 
-    with open(output_filename, "w") as csv_file:
-        for category in category_list:
-            df_temp = df.loc[df["Category"] == category]
+    report = Report()
 
-            # if Cr side is not empty
-            if not df_temp["Cr"].replace(' ', np.nan).isnull().any():
-                df_temp.to_csv(output_filename, mode='a', header=False)
+    report.gen_report(df, output_filename)
 
-        for category in category_list:
-            df_temp = df.loc[df["Category"] == category]
-
-            # if Dr side is not empty
-            if not df_temp["Dr"].replace(' ', np.nan).isnull().any():
-                df_temp.to_csv(output_filename, mode='a', header=False)
-
-    csv_file.close()
 
     # Revenue
     # df_cat_salary       = df.loc[df["Category"] == "Salary"]
